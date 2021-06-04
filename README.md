@@ -65,7 +65,6 @@ const SmartFormComponents: { [key: string]: Component } = {
 };
 
 export default function install(app: App): void {
-  console.log('install success');
   Object.keys(SmartFormComponents).forEach((name) => {
     app.component(name, SmartFormComponents[name]);
   });
