@@ -98,20 +98,19 @@ export default function install(app: App): void {
 /*
  * tips:
  *   
+ *   tsconfig 或 babel 的 target 設定為 es6 以上才需要此設定。
  *   轉譯出來的檔案如果沒有做以下設定，
  *   需要使用 [Library Name].default 呼叫到 install function，
  *   例如：app.use(SmartForm.default)
  *   使用以下設定則會把 [Library Name].default 設定到預設變數名稱。
  *   (上面有使用 --name 的話會是 --name 設定的名稱)
  * 
- *   if not configure below setting, needing to
- *   use [Library Name].default to call install function 
- *   when after compiling.
+ *   If your tsconfig or babel's target setting is es6 or up, needing below configuration.
+ *   If not configure below setting, needing to use [Library Name].default to
+ *   call install function after compiling.
  *   e.g. app.use(SmartForm.default)
- *   configure below setting will set [Library Name].default to
- *   default variable name.
- *   if command with `--name`, will use parameter after `--name`
- *   to assign.
+ *   Configure below setting will set [Library Name].default to default variable name.
+ *   If command with `--name`, will use parameter after `--name` to assign.
  */
 module.exports = {
   configureWebpack: {
