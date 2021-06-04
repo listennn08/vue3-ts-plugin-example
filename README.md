@@ -3,7 +3,7 @@
 
 1. 建立 Component (Create a Component)
 
-```htmlembedded=
+```
 <template>
   <button
     :id="id"
@@ -14,8 +14,6 @@
   </button>
 </template>
 <script lang="ts">
-```
-```typescript=11
 import { defineComponent, ref } from 'vue';
 
 type TProps = {
@@ -38,8 +36,6 @@ export default defineComponent({
     };
   },
 });
-```
-```htmlembedded=33
 </script>
 <style lang="scss" scoped>
 button {
@@ -60,7 +56,7 @@ button {
 ```
 
 2.建立 install function 用於註冊插件 (Create install function using to register plugin)
-```typescript=
+```
 import { App, Component } from 'vue';
 import SFButton from '@/components/SFButton.vue';
 
@@ -77,7 +73,7 @@ export default function install(app: App): void {
 ```
 3. 編輯 build script (Edit build script in package.json)
 
-```javascript=
+```
 // package.json
 /* tips:
  *   --target app | lib | wc | wc-async (default: app)
@@ -98,7 +94,7 @@ export default function install(app: App): void {
 ```
 
 4. 建立 vue.config.js 設定編譯後的 output (Create vue.config.js to configure compiled output setting)
-```javascript=
+```
 // vue.config.js
 /*
  * tips:
